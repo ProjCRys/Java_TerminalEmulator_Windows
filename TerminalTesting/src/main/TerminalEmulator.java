@@ -116,7 +116,3 @@ public class TerminalEmulator {
         }
     }
 }
-
-
-//D: && cd D:\AI\ChatBots\llama-master-63d2046-bin-win-avx-x64 && run.bat
-//echo "hi"
