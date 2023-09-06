@@ -59,14 +59,16 @@ Here's an example of how to use the terminal emulator in your Java application:
 public class Main {
     public static void main(String[] args) {
         TerminalEmulator terminal = new TerminalEmulator();
+        Scanner in = new Scanner(System.in);
+
         terminal.createTerminal();
-
-        // Send commands to the terminal
-        terminal.sendCommand("dir");
-        terminal.sendCommand("echo Hello, World!");
-
-        // Terminate the terminal
-        terminal.terminateTerminal();
+        while (true) {
+            String cmd = in.nextLine();
+            terminal.sendCommand(cmd);
+            if (!terminal.terminalProcess.isAlive()) {
+                break;
+            }
+        }
     }
 }
 ```
